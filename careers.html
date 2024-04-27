@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="Darylle P. Villanueva">
+  <meta name="description" content="Registration Form">
+  <meta name="keywords" content="registration, form, html, css, javascript, registration form">
+  <meta name="revisit-after" content="3 days">
+  <title>Jake's Coffee Shop | Careers</title>
+  <link href="css/resume.css" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined" rel="stylesheet">
+  <script defer src="js/resume.js"></script>
+  <script defer src="js/uploadFileContainer.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="nav__left">
+        <span class="nav__item h6-max h7-min">
+          <a href="index.html#about">About</a>
+        </span>
+        <span class="nav__item h6-max h7-min">
+          <a href="careers.html">Careers</a>
+        </span>
+      </div>
+      <div class="nav__logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="Jake's coffee shop logo">
+          <h1 class="nav__logo-name h5-max h7-min">
+            <a href="index.html">Jake's</a>
+          </h1>
+        </a>
+      </div>
+      <div class="nav__right">
+        <span class="nav__item h6-max h7-min">
+          <a href="index.html#menu">Menu</a>
+        </span>
+        <span class="nav__item h6-max h7-min">
+          <a href="#contact">Contact</a>
+        </span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="h3-max h5-min">Join our community</h1>
+
+    <p class="h6-max h7-min">Join our passionate team at Jake's Coffee Shop and help us craft unforgettable experiences, one cup at a time.</p>
+
+    <form class="h6-max h8-min" method="POST" enctype="multipart/form-data" id="main-form">
+      <div class="fieldset-wrapper">
+        <fieldset class="field basic-info">
+          <legend >Basic Information</legend>
+
+          <div class="name-container">
+            <div class="input-container">
+              <label for="last-name" class=" label required">Last name</label>
+              <input class="text-box" type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <div class="input-container">
+              <label for="first-name" class=" label required">First name</label>
+              <input class="text-box"  type="text" id="first-name" name="first-name" required>
+            </div>
+
+            <div class="input-container">
+              <label for="middle-name" class=" label">Middle name</label>
+              <input class="text-box"  type="text" id="middle-name" name="middle-name" required>
+            </div>
+          </div>
+
+
+          <div class="input-container">
+            <label for="birthdate" class=" label required">Date of birth</label>
+            <input  type="date" id="birthdate" name="birthdate">
+          </div>
+
+          <fieldset class="subfield gender">
+            <legend >Gender</legend>
+
+            <div class="radio-option">
+              <input  type="radio" id="gender-male" name="gender">
+              <label  for="gender-male">Male</label>
+            </div>
+            <div class="radio-option">
+              <input  type="radio" id="gender-female" name="gender">
+              <label  for="gender-female">Female</label>
+            </div>
+            <div class="radio-option">
+              <input  type="radio" id="gender-nonbinary" name="gender">
+              <label  for="gender-nonbinary">Non-binary</label>
+            </div>
+            <div class="radio-option">
+              <input  type="radio" id="gender-empty" name="gender">
+              <label  for="gender-empty">Prefer not to say</label>
+            </div>
+
+          </fieldset>
+        </fieldset>
+
+        <fieldset class="field contact-info">
+          <legend >Contact information</legend>
+
+          <div class="contact-info-wrapper">
+            <div class="input-container">
+              <label for="email" class=" label required">Email address</label>
+              <input class="text-box"  type="email" id="email" name="email" required>
+            </div>
+
+            <fieldset class="subfield phone-num">
+              <legend class="required" style="text-transform: none;">Phone number</legend>
+
+              <!-- TODO: add flag icon -->
+              <div class="phone-num-wrapper">
+                <div class="select-dropdown">
+                  <select  name="country-codes" id="country-code" required>
+                  </select>
+                </div>
+                <input
+                required
+                type="text"
+                class="text-box label required"
+                inputmode="numeric"
+                id="phone-number-wo-code"
+                name="phone-number-wo-code"
+                maxlength="10"
+                oninput="this.value = this.value.replace(/\D+/g, '')">
+              </div>
+            </fieldset>
+          </div>
+
+        </fieldset>
+
+        <fieldset class="field address">
+          <legend >Address</legend>
+
+          <div class="address-field-wrapper">
+
+            <div class="address-field-group1">
+              <div class="input-container">
+                <label for="state-province" class=" label required">State/Province</label>
+                <div class="select-dropdown">
+                  <select  name="state-province" id="state-province" required>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-container">
+                <label for="city" class=" label required">City</label>
+                <div class="select-dropdown">
+                  <select  name="city" id="city" required>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="address-field-group2">
+              <div class="input-container">
+                <label for="barangay" class=" label required">Barangay</label>
+                <div class="select-dropdown">
+                  <select  name="barangay" id="barangay" required>
+                  </select>
+                </div>
+              </div>
+
+              <div class="input-container">
+                <label for="zipcode" class=" label required">Zip code</label>
+                <input class="text-box"  type="text" name="zipcode" id="zipcode" maxlength="18" required>
+              </div>
+            </div>
+
+            <div class="address-field-group3">
+              <input class="text-box"  type="text" name="address-line-1" placeholder="Street address line 1" required>
+              <input class="text-box"  type="text" name="address-line-2" placeholder="Street address line 2 (Optional)">
+            </div>
+
+          </div>
+        </fieldset>
+
+        <fieldset class="field job-details">
+          <legend >Job details</legend>
+
+          <div class="pos-startdate-container">
+            <div class="input-container">
+              <label for="position" class=" label required">Applying position</label>
+              <div class="select-dropdown">
+                <select  name="position" id="position" required>
+                </select>
+              </div>
+            </div>
+            <div class="input-container">
+              <label for="start-date" class="label required">Date you can start</label>
+              <input  type="date" name="start-date" id="start-date" required>
+            </div>
+          </div>
+
+          <div>
+            <div class="input-container">
+              <label for="desired-salary" class="label required">Desired salary (₱)</label>
+              <input
+              required
+              type="text"
+              class="text-box label required"
+              inputmode="numeric"
+              id="desired-salary"
+              name="desired-salary"
+              oninput="this.value = this.value.replace(/\D+/g, '')">
+            </div>
+          </div>
+
+          <div class="input-container">
+            <label for="resume" class=" label required">Resume</label>
+
+            <div class="drop-zone">
+              <span class="drop-zone__prompt">
+                <span class="bx bx-upload"></span>
+                <span>Drag files here or click to upload</span>
+              </span>
+              <!-- <div class="drop-zone__thumb" data-label="resume.pdf"></div> -->
+              <input type="file" name="resume" id="resume" class="drop-zone__input">
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <div class="notice-and-submit-btn">
+        <small id="submit-notice" class="h7-max h9-min">
+          By clicking the submit button below, I certify that all of the information provided on this application is true and complete, and I understand that if any false information, ommissions, or misrepresentations are discovered, the application may be rejected and, if I am employed, my employement may be terminated at any time.  
+        </small>
+
+        <input class="h5-max h7-min" type="submit" name="submit" id="submit" value="Submit">
+      </div>
+
+
+    </form>
+  </main>
+
+  <footer id="contact">
+    <div class="footer__upper">
+      <div class="contact__logo">
+        <img src="assets/logo.png" alt="Jake's coffee shop logo">
+        <h1 class="contact__logo-name h4-max h6-min">
+          <a href="index.html">Jake's</a>
+        </h1>
+      </div>
+      <div class="contact__details">
+        <div class="contact__details-email">
+          <div class="contact__details-title">
+            <h3 class="h5-max h6-min">CONTACT</h3>
+          </div>
+          <div class="contact__details-content">
+            <span class="h6-max h7-min contact__details-entry">
+              <span class='bx bxs-envelope'></span>
+              <a href="mailto:jake@coffee.com">jake@coffee.com</a>
+            </span>
+            <span class="h6-max h7-min contact__details-entry">
+              <span class='bx bxs-phone'></span>
+              <p>0115 9324567</p>
+            </span>
+          </div>
+        </div>
+        <div class="contact__details-address">
+          <div class="h5-max h6-min">
+            <h3 class="h5-max h6-min">ADDRESS</h3>
+          </div>
+          <div class="contact__details-content">
+            <span class="h6-max h7-min contact__details-entry">23 Fine Road</span>
+            <span class="h6-max h7-min contact__details-entry">Nottingham, NG1 5YU</span>
+          </div>
+        </div>
+        <div class="contact__details-socials">
+          <div class="h5-max h6-min">
+            <h3 class="h5-max h6-min">FOLLOW US ON</h3>
+          </div>
+          <div class="contact__details-content">
+            <span class="h5-max h6-min contact__details-entry bx bxl-facebook"></span>
+            <span class="h5-max h6-min contact__details-entry bx bxl-linkedin"></span>
+            <span class="h5-max h6-min contact__details-entry bx bxl-instagram"></span>
+            <span class="h5-max h6-min contact__details-entry bx bxl-tiktok"></span>
+            <span class="h5-max h6-min contact__details-entry bx bxl-twitter"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__lower">
+      <span class="h7-max h8-min">Copyright &copy; 2024. Jake's Coffee Shop</span>
+    </div>
+  </footer>
+</body>
+</html>
