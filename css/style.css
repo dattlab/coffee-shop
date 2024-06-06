@@ -366,6 +366,12 @@ footer {
     border-radius: 100%;
 }
 
+.menu-price {
+    font-family: "DM Serif Display";
+}
+
+
+
 @media (max-width: 412px) {
     .nav__logo-name {
         display: none;
